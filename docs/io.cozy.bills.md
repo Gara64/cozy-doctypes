@@ -38,6 +38,7 @@ statements.
 
 - `health_costs`: Health related bills
 - `phone`: Phone related bills
+- `pay`: salary
 
 ### Some more attributes for reimbursement bills
 
@@ -68,5 +69,33 @@ are there to help the connector to link this bills to their original debit opera
   "subtype": "Consultation spécialiste",
   "type": "health_costs",
   "vendor": "Harmonie"
+}
+```
+
+### Attributes for pay type
+
+- `date`: {date} - The payment date
+- `periodStart`: {date} - The start of the payment period
+- `periodEnd`: {date} - The end of the payment period
+- `isRefund`: {boolean} - Indicates that the pay represents a positive operation
+- `payslip`: {string} - The associated payslip file. ex: `io.cozy.files:c43645a93831827c7ec512eac3006e51`
+- `employer`: {boolean} - The employer name
+
+### Example
+
+```
+{
+  "_id": "62e5d80d6e11d19992b7efce794263f0",
+  "vendor": "Payfit",
+  "type": "pay",
+  "amount": 1500,
+  "date": "2018-10-31T00:00:00.000Z",
+  "periodStart": "2018-10-01T00:00:00.000Z",
+  "periodEnd": "2018-10-31T00:00:00.000Z",
+  "isRefund": true,
+  "metadata": {
+    "version": 1
+  }
+  "payslip": "io.cozy.files:c43645a93831827c7ec512eac3006e51"
 }
 ```
